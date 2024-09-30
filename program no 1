@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+// Abstract class
+class Shape {
+public:
+    // Pure virtual function (abstract method)
+    virtual void draw() = 0;  // This makes Shape an abstract class
+
+    // Non-abstract method
+    void info() {
+        cout << "This is a shape." << endl;
+    }
+};
+
+// Derived class from Shape
+class Circle : public Shape {
+public:
+    // Overriding the abstract method
+    void draw() override {
+        cout << "Drawing a Circle." << endl;
+    }
+};
+
+// Derived class from Shape
+class Square : public Shape {
+public:
+    // Overriding the abstract method
+    void draw() override {
+        cout << "Drawing a Square." << endl;
+    }
+};
+
+int main() {
+    // Shape s; // This will give an error as Shape is an abstract class
+
+    Circle c;
+    c.draw();  // Output: Drawing a Circle.
+    c.info();  // Output: This is a shape.
+
+    Square s;
+    s.draw();  // Output: Drawing a Square.
+    s.info();  // Output: This is a shape.
+
+    return 0;
+}
