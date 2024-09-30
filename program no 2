@@ -1,0 +1,20 @@
+# Base class 1
+class Engine:
+    def start_engine(self):
+        print("Engine started.")
+
+# Base class 2
+class Wheels:
+    def rotate_wheels(self):
+        print("Wheels are rotating.")
+
+# Derived class inheriting from both Engine and Wheels
+class Car(Engine, Wheels):
+    def drive(self):
+        print("Car is driving.")
+
+# Main program
+my_car = Car()
+my_car.start_engine()   # Calling method from Engine class
+my_car.rotate_wheels()  # Calling method from Wheels class
+my_car.drive()          # Calling method from Car class
